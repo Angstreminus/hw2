@@ -7,7 +7,7 @@ import (
 	"github.com/magiconair/properties/assert"
 )
 
-func Test_validateInput(t *testing.T) {
+func TestValidateInput(t *testing.T) {
 	tests := []struct {
 		name  string
 		testA int
@@ -20,35 +20,30 @@ func Test_validateInput(t *testing.T) {
 			testB: 10,
 			want:  errors.New("INVALID INPUT"),
 		},
-
 		{
 			name:  "Border_InvalidTest_A",
 			testA: 1001,
 			testB: 10,
 			want:  errors.New("INVALID INPUT"),
 		},
-
 		{
 			name:  "Border_InvalidTest_B",
 			testA: 10,
 			testB: -1,
 			want:  errors.New("INVALID INPUT"),
 		},
-
 		{
 			name:  "Border_InvalidTest_B",
 			testA: 10,
 			testB: 1001,
 			want:  errors.New("INVALID INPUT"),
 		},
-
 		{
 			name:  "Border_InvalidTest_BothArgs",
 			testA: -1,
 			testB: -1,
 			want:  errors.New("INVALID INPUT"),
 		},
-
 		{
 			name:  "ValidTest_Input",
 			testA: 3,
@@ -56,7 +51,6 @@ func Test_validateInput(t *testing.T) {
 			want:  nil,
 		},
 	}
-
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
 			err := validateInput(test.testA, test.testB)
@@ -65,7 +59,7 @@ func Test_validateInput(t *testing.T) {
 	}
 }
 
-func Test_Task1(t *testing.T) {
+func TestTask1(t *testing.T) {
 	tests := []struct {
 		name    string
 		testA   int
@@ -80,7 +74,6 @@ func Test_Task1(t *testing.T) {
 			want:    0.0,
 			wantErr: nil,
 		},
-
 		{
 			name:    "3_4_5",
 			testA:   3,
@@ -88,7 +81,6 @@ func Test_Task1(t *testing.T) {
 			want:    5.0,
 			wantErr: nil,
 		},
-
 		{
 			name:    "6_8_10",
 			testA:   6,
@@ -96,7 +88,6 @@ func Test_Task1(t *testing.T) {
 			want:    10.0,
 			wantErr: nil,
 		},
-
 		{
 			name:    "Invalid data",
 			testA:   -1,
@@ -105,7 +96,6 @@ func Test_Task1(t *testing.T) {
 			wantErr: errors.New("INVALID INPUT"),
 		},
 	}
-
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
 			res, err := task1(test.testA, test.testB)

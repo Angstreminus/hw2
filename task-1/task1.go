@@ -18,8 +18,7 @@ func task1(a, b int) (float64, error) {
 	if err := validateInput(a, b); err != nil {
 		return 0.0, err
 	}
-	a_t, b_t := float64(a), float64(b)
-	return math.Hypot(a_t, b_t), nil
+	return math.Hypot(float64(a), float64(b)), nil
 }
 
 func mainTask1() {
@@ -27,9 +26,7 @@ func mainTask1() {
 		a, b int
 		res  float64
 	)
-
 	fmt.Scan(&a, &b)
-
 	res, err := task1(a, b)
 	if err != nil {
 		log.Fatal(err)

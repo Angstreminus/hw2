@@ -21,7 +21,6 @@ func Test_Task2(t *testing.T) {
 			testC: 0,
 			want:  "YES",
 		},
-
 		{
 			name:  "3_4_5",
 			testA: 3,
@@ -29,7 +28,6 @@ func Test_Task2(t *testing.T) {
 			testC: 5,
 			want:  "YES",
 		},
-
 		{
 			name:  "6_8_10",
 			testA: 6,
@@ -37,7 +35,6 @@ func Test_Task2(t *testing.T) {
 			testC: 10.0,
 			want:  "YES",
 		},
-
 		{
 			name:  "42_1_1",
 			testA: 1,
@@ -45,7 +42,6 @@ func Test_Task2(t *testing.T) {
 			testC: 1,
 			want:  "NO",
 		},
-
 		{
 			name:  "Invalid data",
 			testA: -1,
@@ -54,11 +50,10 @@ func Test_Task2(t *testing.T) {
 			want:  "NO",
 		},
 	}
-
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
 			res := task2(test.testA, test.testB, test.testC)
-			assert.Equal(t, res, test.want)
+			assert.Equal(t, test.want, res)
 		})
 	}
 }
